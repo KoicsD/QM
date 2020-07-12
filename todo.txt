@@ -1,0 +1,8 @@
+Negatív szám elleni védelem SetPotential stb függvényekbe?
+Fontos-e, hogy kezdeti állapotba kerüljön a rendszer az idõlépés beállításakor?
+Esetleg a nem mûködõ scrollbar helyére szöbegmezõt tenni, mely az idõt mutatja?
+Biztos, hogy az energia-eloszlás ábrázolására a plot(..., 'o') a legjobb módszer?
+Autoscale kiiktatása?
+Mi a nyavalyát lehet tenni az ellen a felugró ablak ellen?
+Átlagértékek lekérdezése és megjelenítése?
+uiresume elõtt waitstatus vizsgálata?
