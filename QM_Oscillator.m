@@ -510,10 +510,14 @@ classdef QM_Oscillator < QuantumProblem
         function [indexes, energy_values] = SetEnergy(obj, energy_states)                                               % kezdeti energiaállapot beállítása
             nes = length(energy_states);
             indexes = 0 : nes - 1;
-            if isequal(isnan(energy_states), zeros(1, nes)) || isequal(isnan(energy_states), zeros(nes, 1)) ||...
-                    isequal(isinf(energy_states), zeros(1, nes)) || isequal(isinf(energy_states), zeros(nes, 1)) ||...
-                    isequal(energy_states, zeros(1, nes)) || isequal(energy_states, zeros(nes, 1))
-                error('Wrong arguments.')
+            if ~(isequal(isnan(energy_states), zeros(1, nes)) || isequal(isnan(energy_states), zeros(nes, 1)))
+                error('One energy-coefficient is NaN.')
+            end
+            if ~(isequal(isinf(energy_states), zeros(1, nes)) || isequal(isinf(energy_states), zeros(nes, 1)))
+                error('One energy-coefficient is Inf.')
+            end
+            if (isequal(energy_states, zeros(1, nes)) || isequal(energy_states, zeros(nes, 1)))
+                error('All energy-coefficient is zero.')
             end
             obj.EnergyValues = obj.hl * obj.omegha * (indexes + 1 / 2);
             obj.EnergyStates = energy_states;
